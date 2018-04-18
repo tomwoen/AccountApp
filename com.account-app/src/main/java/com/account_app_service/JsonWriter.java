@@ -7,10 +7,15 @@ import com.google.gson.Gson;
 public class JsonWriter {
 
 	private static String jsonStr;
+	private String firstname;
+	private String lastname;
 	
-	public void jWriter() {
+	public void jWriter(String firstname, String lastname) {
 		
-		Accounts account = new Accounts("Tom", "Owen");
+		this.firstname = firstname;
+		this.lastname = lastname;
+		
+		Accounts account = new Accounts(firstname, lastname);
 		
 		Gson gsonObj = new Gson();
 		setJsonStr(gsonObj.toJson(account));
