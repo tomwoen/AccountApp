@@ -4,15 +4,24 @@ import com.google.gson.Gson;
 
 public class JsonWriter {
 
-	public static void main(String args []) {
+	private static String jsonStr;
+	
+	public void jWriter() {
 		
 		Accounts account = new Accounts("Tom", "Owen");
 		
 		Gson gsonObj = new Gson();
-		String jsonStr = gsonObj.toJson(account);
-		System.out.println(jsonStr);
+		setJsonStr(gsonObj.toJson(account));
+		System.out.println(getJsonStr());
 		
-		
+	}
+
+	public static String getJsonStr() {
+		return jsonStr;
+	}
+
+	public static void setJsonStr(String jsonStr) {
+		JsonWriter.jsonStr = jsonStr;
 	}
 	
 }
