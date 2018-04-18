@@ -2,7 +2,6 @@ package com.account_app_servicetest;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import com.account_app_service.JsonWriter;
@@ -17,12 +16,19 @@ public class JSONTest {
 		
 		
 		jsonWriter = new JsonWriter(); 
-		jsonWriter.jWriter("Tom","Owen");
-		String expected = "{\"firstname\":\"Tom\",\"lastname\":\"Owen\",\"accountnumber\":0}";
+		jsonWriter.jWriter("Tom","Owen");		
+		String firstoutput = "{\"firstname\":\"Tom\",\"lastname\":\"Owen\",\"accountnumber\":0}";
 		String JSONConsoleOutput = jsonWriter.getJsonStr();
 		
-		assertEquals(expected,JSONConsoleOutput);
+		assertEquals(firstoutput,JSONConsoleOutput);
+		
+		jsonWriter.jWriter("Phil", "Mitchell");
+		String SecondJSONConsoleOutput = jsonWriter.getJsonStr();
+		String SecondOutput = "{\"firstname\":\"Phil\",\"lastname\":\"Mitchell\",\"accountnumber\":1}";
+		assertEquals(SecondOutput,SecondJSONConsoleOutput);
 		
 	}
+	
+
 
 }
