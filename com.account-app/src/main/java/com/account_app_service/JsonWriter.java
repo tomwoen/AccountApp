@@ -1,5 +1,7 @@
-package com.account_app;
+package com.account_app_service;
 
+
+import com.account_app_domain.Accounts;
 import com.google.gson.Gson;
 
 public class JsonWriter {

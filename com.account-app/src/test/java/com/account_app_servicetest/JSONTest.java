@@ -1,9 +1,11 @@
-package com.account_app;
+package com.account_app_servicetest;
 
 import static org.junit.Assert.*;
 
 
 import org.junit.Test;
+
+import com.account_app_service.JsonWriter;
 
 public class JSONTest {
 	
