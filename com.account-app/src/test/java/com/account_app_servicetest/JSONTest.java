@@ -2,6 +2,7 @@ package com.account_app_servicetest;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.account_app_service.JsonWriter;
@@ -11,11 +12,17 @@ public class JSONTest {
 	
 	JsonWriter jsonWriter;
 		
+	@Before 
+	
+	public void setUp( ) {
+		jsonWriter = new JsonWriter();
+	}
+	
 	@Test
 	public void jTest() {
 		
 		
-		jsonWriter = new JsonWriter(); 
+		 
 		jsonWriter.jWriter("Tom","Owen");		
 		String firstoutput = "{\"firstname\":\"Tom\",\"lastname\":\"Owen\",\"accountnumber\":0}";
 		String JSONConsoleOutput = jsonWriter.getJsonStr();
