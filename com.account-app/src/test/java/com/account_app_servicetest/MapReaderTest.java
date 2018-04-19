@@ -15,7 +15,19 @@ public class MapReaderTest {
 	private Services services;
 
 	@Test
-	public void test() {
+	public void emptyMapTest() {
+	
+	services = new Services();
+	accounts = new Accounts("Phil","Mitchell");
+	mapRead = new MapReader();
+	int expectedValue = 0;
+	int actualValue = mapRead.read("Tom",services.getAccounts());
+	Assert.assertEquals(expectedValue, actualValue);
+	
+	}
+	
+	@Test
+	public void filledMapTest() {
 	
 	services = new Services();
 	accounts = new Accounts("Tom","Owen");
